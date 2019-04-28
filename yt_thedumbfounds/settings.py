@@ -25,7 +25,7 @@ SECRET_KEY = '875wp5@br*u2@e5!7)6g*@62f+efg_p+@ba$$#*a#m3t^24ze%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['134.209.212.69']
 
 
 # Application definition
@@ -82,8 +82,12 @@ REST_FRAMEWORK = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'snippets_db',
+	'USER': 'nabs',
+	'PASSWORD': '123',
+	'HOST': 'localhost',
+	'PORT': '',
     }
 }
 
@@ -125,3 +129,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
